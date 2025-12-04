@@ -10,10 +10,10 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background: #0d1117;
-            color: #fff;
+            color: #ffffff;
         }
 
-        /* Barra superior */
+        /* Top bar */
         .topbar {
             width: 100%;
             padding: 15px 25px;
@@ -33,30 +33,30 @@
             cursor: pointer;
             transition: 0.2s;
         }
-
         .lang-btn:hover {
-            background: #1f2630;
-            box-shadow: 0 0 8px #58a6ff;
+            background: #1d2630;
+            box-shadow: 0 0 10px #58a6ff;
         }
 
+        /* Header */
         header {
-            padding: 30px;
             text-align: center;
+            padding: 35px 15px;
         }
 
         header h1 {
             margin: 0;
-            font-size: 48px;
+            font-size: 50px;
             color: #58a6ff;
             text-shadow: 0 0 15px #58a6ff, 0 0 25px #58a6ff;
         }
 
-        /* Glow */
         .glow-hover:hover {
             color: #58a6ff;
-            text-shadow: 0 0 12px #58a6ff, 0 0 20px #58a6ff;
+            text-shadow: 0 0 12px #58a6ff;
         }
 
+        /* Quick buttons */
         .quick-links {
             margin-top: 20px;
             display: flex;
@@ -71,14 +71,14 @@
             border: 1px solid #30363d;
             color: #58a6ff;
             text-decoration: none;
-            transition: 0.3s;
+            transition: 0.25s;
         }
-
         .button-glow:hover {
             background: #1d2430;
             box-shadow: 0 0 15px #58a6ff;
         }
 
+        /* Sections */
         .container {
             max-width: 900px;
             margin: auto;
@@ -98,17 +98,8 @@
             margin-top: 0;
         }
 
-        a {
-            color: #58a6ff;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-shadow: 0 0 12px #58a6ff;
-        }
-
         footer {
-            margin-top: 35px;
+            margin-top: 40px;
             text-align: center;
             padding: 20px;
             color: #8b949e;
@@ -117,7 +108,7 @@
 </head>
 <body>
 
-<!-- BARRA SUPERIOR -->
+<!-- TOPBAR -->
 <div class="topbar">
     <button class="lang-btn" onclick="setLang('es')">ES</button>
     <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -130,11 +121,11 @@
     <p class="glow-hover lang es">
         Soluciona tus ejercicios automáticamente. Fácil, rápido y sin complicaciones 🗿
     </p>
+
     <p class="glow-hover lang en" style="display:none;">
         Automatically solves your exercises. Fast, simple, and effortless 🗿
     </p>
 
-    <!-- BOTONES -->
     <div class="quick-links">
         <a href="#descargas" class="button-glow">Descargas</a>
         <a href="#foro" class="button-glow">Foro</a>
@@ -142,24 +133,25 @@
     </div>
 </header>
 
+<!-- MAIN CONTENT -->
 <div class="container">
 
-    <!-- ¿QUÉ ES ALEKSBOT? -->
-    <div class="section" id="info">
+    <!-- INFO -->
+    <div class="section">
         <h2 class="glow-hover lang es">¿Qué es AleksBot?</h2>
         <p class="lang es">
-            Es un tutor (también se le puede considerar un “helper” o “cheat”) que te permite completar ejercicios
-            de ALEKS u otros tipos de tareas matemáticas online.  
-            Para dar confianza en este programa, quiero mencionar que fue creado por mí, un estudiante cansado
-            de hacer ejercicios matemáticos interminables.
+            Es un tutor (también se lo puede considerar un “helper” o “cheat”) que te permite completar ejercicios de
+            ALEKS u otros tipos de tareas matemáticas online.  
+            Para generar confianza en este programa, quiero mencionar que fue creado por mí: un estudiante cansado de
+            hacer ejercicios matemáticos interminables.
         </p>
 
         <h2 class="glow-hover lang en" style="display:none;">What is AleksBot?</h2>
         <p class="lang en" style="display:none;">
-            It is a tutor (it can also be considered a "helper" or "cheat") that allows you to complete ALEKS exercises
+            It is a tutor (it can also be considered a “helper” or “cheat”) that allows you to complete ALEKS exercises
             or any other type of online math assignments.  
-            To build trust in this program, I would like to mention that it was created by me, a student who got tired
-            of doing endless math exercises.
+            To build trust in this program, I want to mention that it was created by me, a student who got tired of
+            doing endless math exercises.
         </p>
     </div>
 
@@ -171,7 +163,10 @@
         <p class="lang es">Versión actual: <b id="version-actual">Cargando...</b></p>
         <p class="lang en" style="display:none;">Latest version: <b id="version-actual-en">Loading...</b></p>
 
-        <a href="#" class="button-glow">Descargar (Windows)</a>
+        <a href="https://github.com/max601243/Aleks-Bot-Project/releases/latest"
+           class="button-glow" target="_blank">
+           Descargar (Windows)
+        </a>
     </div>
 
     <!-- FORO -->
@@ -180,11 +175,11 @@
         <h2 class="glow-hover lang en" style="display:none;">Forum / Information</h2>
 
         <p class="lang es">
-            Aquí encontrarás información básica del programa, cómo funciona, sus características y respuestas rápidas a preguntas comunes.
+            Aquí encontrarás información básica del programa, cómo funciona y respuestas rápidas a preguntas comunes.
         </p>
 
         <p class="lang en" style="display:none;">
-            Here you will find basic program information, how it works, its features, and quick answers to common questions.
+            Here you will find basic information about the program, how it works, and quick answers to common questions.
         </p>
     </div>
 
@@ -194,7 +189,7 @@
     © 2025 AleksBot | Hecho con odio y café ☕💀
 </footer>
 
-<!-- SCRIPT IDIOMAS -->
+<!-- LANGUAGE SCRIPT -->
 <script>
 function setLang(id) {
     document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
@@ -202,17 +197,20 @@ function setLang(id) {
 }
 </script>
 
-<!-- SCRIPT PARA OBTENER EL ÚLTIMO TAG DE GITHUB -->
+<!-- VERSION SCRIPT (FETCH LAST TAG) -->
 <script>
 async function cargarUltimaVersion() {
     try {
-        const resp = await fetch("https://api.github.com/repos/max601243/Aleksbot/tags");
+        const resp = await fetch("https://api.github.com/repos/max601243/Aleksbot_AutoUpdate/tags");
         const tags = await resp.json();
 
         if (tags.length > 0) {
-            const v = tags[0].name;
-            document.getElementById("version-actual").innerText = v;
-            document.getElementById("version-actual-en").innerText = v;
+            const version = tags[0].name;
+            document.getElementById("version-actual").innerText = version;
+            document.getElementById("version-actual-en").innerText = version;
+        } else {
+            document.getElementById("version-actual").innerText = "No tags";
+            document.getElementById("version-actual-en").innerText = "No tags";
         }
     } catch (e) {
         document.getElementById("version-actual").innerText = "Error";
