@@ -21,6 +21,7 @@
             border-bottom: 1px solid #30363d;
             display: flex;
             justify-content: flex-end;
+            gap: 10px;
         }
 
         .lang-btn {
@@ -38,7 +39,6 @@
             box-shadow: 0 0 8px #58a6ff;
         }
 
-        /* Header */
         header {
             padding: 30px;
             text-align: center;
@@ -46,18 +46,17 @@
 
         header h1 {
             margin: 0;
-            font-size: 40px;
+            font-size: 48px;
             color: #58a6ff;
-            text-shadow: 0 0 10px #58a6ff;
+            text-shadow: 0 0 15px #58a6ff, 0 0 25px #58a6ff;
         }
 
-        /* Glow general */
+        /* Glow */
         .glow-hover:hover {
             color: #58a6ff;
             text-shadow: 0 0 12px #58a6ff, 0 0 20px #58a6ff;
         }
 
-        /* Botones rápidos */
         .quick-links {
             margin-top: 20px;
             display: flex;
@@ -77,26 +76,26 @@
 
         .button-glow:hover {
             background: #1d2430;
-            box-shadow: 0 0 12px #58a6ff;
+            box-shadow: 0 0 15px #58a6ff;
         }
 
-        /* Contenido general */
         .container {
             max-width: 900px;
             margin: auto;
-            padding: 15px;
+            padding: 20px;
         }
 
         .section {
             background: #161b22;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
-            margin-top: 25px;
+            margin-top: 35px;
             border: 1px solid #30363d;
         }
 
         h2 {
             color: #58a6ff;
+            margin-top: 0;
         }
 
         a {
@@ -127,10 +126,15 @@
 <!-- HEADER -->
 <header>
     <h1 class="glow-hover">AleksBot</h1>
-    <p class="glow-hover lang es">Soluciona tus ejercicios automáticamente. Fácil, rápido y sin complicaciones 🗿</p>
-    <p class="glow-hover lang en" style="display:none;">Automatically solves your exercises. Fast and simple 🗿</p>
 
-    <!-- BOTONES INICIALES -->
+    <p class="glow-hover lang es">
+        Soluciona tus ejercicios automáticamente. Fácil, rápido y sin complicaciones 🗿
+    </p>
+    <p class="glow-hover lang en" style="display:none;">
+        Automatically solves your exercises. Fast, simple, and effortless 🗿
+    </p>
+
+    <!-- BOTONES -->
     <div class="quick-links">
         <a href="#descargas" class="button-glow">Descargas</a>
         <a href="#foro" class="button-glow">Foro</a>
@@ -140,13 +144,84 @@
 
 <div class="container">
 
-    <!-- INFO -->
-    <div class="section">
-        <h2 class="lang es glow-hover">¿Qué es AleksBot?</h2>
+    <!-- ¿QUÉ ES ALEKSBOT? -->
+    <div class="section" id="info">
+        <h2 class="glow-hover lang es">¿Qué es AleksBot?</h2>
         <p class="lang es">
-            AleksBot es un programa diseñado para resolver ejercicios matemáticos mediante OCR, reconocimiento de expresiones,
-            y actualizaciones automáticas avanzadas.
+            Es un tutor (también se le puede considerar un “helper” o “cheat”) que te permite completar ejercicios
+            de ALEKS u otros tipos de tareas matemáticas online.  
+            Para dar confianza en este programa, quiero mencionar que fue creado por mí, un estudiante cansado
+            de hacer ejercicios matemáticos interminables.
         </p>
 
-        <h2 class="lang en glow-hover" style="display:none;">What is A
+        <h2 class="glow-hover lang en" style="display:none;">What is AleksBot?</h2>
+        <p class="lang en" style="display:none;">
+            It is a tutor (it can also be considered a "helper" or "cheat") that allows you to complete ALEKS exercises
+            or any other type of online math assignments.  
+            To build trust in this program, I would like to mention that it was created by me, a student who got tired
+            of doing endless math exercises.
+        </p>
+    </div>
 
+    <!-- DESCARGAS -->
+    <div class="section" id="descargas">
+        <h2 class="glow-hover lang es">Descargar AleksBot</h2>
+        <h2 class="glow-hover lang en" style="display:none;">Download AleksBot</h2>
+
+        <p class="lang es">Versión actual: <b id="version-actual">Cargando...</b></p>
+        <p class="lang en" style="display:none;">Latest version: <b id="version-actual-en">Loading...</b></p>
+
+        <a href="#" class="button-glow">Descargar (Windows)</a>
+    </div>
+
+    <!-- FORO -->
+    <div class="section" id="foro">
+        <h2 class="glow-hover lang es">Foro / Información</h2>
+        <h2 class="glow-hover lang en" style="display:none;">Forum / Information</h2>
+
+        <p class="lang es">
+            Aquí encontrarás información básica del programa, cómo funciona, sus características y respuestas rápidas a preguntas comunes.
+        </p>
+
+        <p class="lang en" style="display:none;">
+            Here you will find basic program information, how it works, its features, and quick answers to common questions.
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    © 2025 AleksBot | Hecho con odio y café ☕💀
+</footer>
+
+<!-- SCRIPT IDIOMAS -->
+<script>
+function setLang(id) {
+    document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.' + id).forEach(el => el.style.display = 'block');
+}
+</script>
+
+<!-- SCRIPT PARA OBTENER EL ÚLTIMO TAG DE GITHUB -->
+<script>
+async function cargarUltimaVersion() {
+    try {
+        const resp = await fetch("https://api.github.com/repos/max601243/Aleksbot/tags");
+        const tags = await resp.json();
+
+        if (tags.length > 0) {
+            const v = tags[0].name;
+            document.getElementById("version-actual").innerText = v;
+            document.getElementById("version-actual-en").innerText = v;
+        }
+    } catch (e) {
+        document.getElementById("version-actual").innerText = "Error";
+        document.getElementById("version-actual-en").innerText = "Error";
+    }
+}
+
+cargarUltimaVersion();
+</script>
+
+</body>
+</html>
