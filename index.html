@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AleksBot - Página Oficial</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0d1117;
+            color: #fff;
+        }
+
+        /* Barra superior */
+        .topbar {
+            width: 100%;
+            padding: 15px 25px;
+            background: #161b22;
+            border-bottom: 1px solid #30363d;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .lang-btn {
+            background: #161b22;
+            color: #58a6ff;
+            border: 1px solid #30363d;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .lang-btn:hover {
+            background: #1f2630;
+            box-shadow: 0 0 8px #58a6ff;
+        }
+
+        /* Header */
+        header {
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 40px;
+            color: #58a6ff;
+            text-shadow: 0 0 10px #58a6ff;
+        }
+
+        /* Glow general */
+        .glow-hover:hover {
+            color: #58a6ff;
+            text-shadow: 0 0 12px #58a6ff, 0 0 20px #58a6ff;
+        }
+
+        /* Botones rápidos */
+        .quick-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .button-glow {
+            background: #161b22;
+            padding: 12px 22px;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+            color: #58a6ff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .button-glow:hover {
+            background: #1d2430;
+            box-shadow: 0 0 12px #58a6ff;
+        }
+
+        /* Contenido general */
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 15px;
+        }
+
+        .section {
+            background: #161b22;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+            border: 1px solid #30363d;
+        }
+
+        h2 {
+            color: #58a6ff;
+        }
+
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-shadow: 0 0 12px #58a6ff;
+        }
+
+        footer {
+            margin-top: 35px;
+            text-align: center;
+            padding: 20px;
+            color: #8b949e;
+        }
+    </style>
+</head>
+<body>
+
+<!-- BARRA SUPERIOR -->
+<div class="topbar">
+    <button class="lang-btn" onclick="setLang('es')">ES</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+</div>
+
+<!-- HEADER -->
+<header>
+    <h1 class="glow-hover">AleksBot</h1>
+    <p class="glow-hover lang es">Soluciona tus ejercicios automáticamente. Fácil, rápido y sin complicaciones 🗿</p>
+    <p class="glow-hover lang en" style="display:none;">Automatically solves your exercises. Fast and simple 🗿</p>
+
+    <!-- BOTONES INICIALES -->
+    <div class="quick-links">
+        <a href="#descargas" class="button-glow">Descargas</a>
+        <a href="#foro" class="button-glow">Foro</a>
+        <a href="https://github.com/max601243" target="_blank" class="button-glow">Mi GitHub</a>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- INFO -->
+    <div class="section">
+        <h2 class="lang es glow-hover">¿Qué es AleksBot?</h2>
+        <p class="lang es">
+            AleksBot es un programa diseñado para resolver ejercicios matemáticos mediante OCR, reconocimiento de expresiones,
+            y actualizaciones automáticas avanzadas.
+        </p>
+
+        <h2 class="lang en glow-hover" style="display:none;">What is A
+
